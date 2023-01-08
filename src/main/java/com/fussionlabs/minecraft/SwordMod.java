@@ -29,6 +29,7 @@ public class SwordMod
 
         toolMaterial = EnumHelper.addToolMaterial("MATERIAL_NAME", 4, 10, 20.0F, 100.0F, 30);
 
+        sword = new CustomSword();
 
     }
 
