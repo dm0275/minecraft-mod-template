@@ -27,7 +27,7 @@ public class SwordMod
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
 
-        toolMaterial = EnumHelper.addToolMaterial("MATERIAL_NAME", 4, 10, 20.0F, 100.0F, 30);
+        toolMaterial = EnumHelper.addToolMaterial("MATERIAL NAME", 4, 10, 20.0F, 100.0F, 30);
 
         sword = new CustomSword();
 
