@@ -96,14 +96,16 @@ jar {
 
 // Task to copy the mod jar into the Minecraft mod directory
 task copyMod(type: Copy) {
-    String targetDir = System.getenv("MINECRAFT_TARGET_DIR")
+    doLast {
+        String targetDir = System.getenv("MINECRAFT_TARGET_DIR")
 
-    if (targetDir == null) {
-        throw new GradleException("MINECRAFT_TARGET_DIR environment variable not set")
+        if (targetDir == null) {
+            throw new GradleException("MINECRAFT_TARGET_DIR environment variable not set")
+        }
+
+        from file("$buildDir/libs/$archivesBaseName-${version}.jar")
+        into file(targetDir)
     }
-
-    from file("$buildDir/libs/$archivesBaseName-${version}.jar")
-    into file(targetDir)
 }
 
 // Example configuration to allow publishing using the maven-publish task
